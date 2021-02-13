@@ -50,3 +50,7 @@
   margin-right: 10px;
   font-size: 14px;
 }
+
+.movie a {
+  display: contents;
+}
