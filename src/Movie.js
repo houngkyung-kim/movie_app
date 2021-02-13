@@ -8,10 +8,10 @@ Movie.propTypes = {
   title: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,
   poster: PropTypes.string.isRequired,
-
+  genres: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
-function Movie({year, title, summary, poster}) {
+function Movie({year, title, summary, poster, genres}) {
   return (
     <div className="movie">
       <img className="poster" src={poster} alt={title} title={title} />
@@ -19,6 +19,7 @@ function Movie({year, title, summary, poster}) {
         <h3 className="title">{title}</h3>
         <h5 className="year">{year}</h5>
         <p className="summary">{summary}</p>
+        <ul className="genres">{genres.map((genre, index) => <li key={index} className="genres__genre">{genre}</li>)}</ul>
       </div>
     </div>
   );
